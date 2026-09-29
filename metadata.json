@@ -1,0 +1,6 @@
+{
+  "name": "CHI TIÊU VIỆT",
+  "description": "Ứng dụng quản lý tài chính cá nhân và gia đình thông minh với nhập nhanh bằng giọng nói AI và báo cáo chuyên sâu.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

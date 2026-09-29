@@ -1,0 +1,110 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User profile document",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "description": "Firebase Auth UID" },
+        "name": { "type": "string", "description": "Display name" },
+        "email": { "type": "string", "description": "User email address" },
+        "phone": { "type": "string", "description": "User phone number" },
+        "avatar": { "type": "string", "description": "User avatar" },
+        "createdAt": { "type": "string", "description": "ISO timestamp" },
+        "updatedAt": { "type": "string", "description": "ISO timestamp" }
+      },
+      "required": ["uid", "name"]
+    },
+    "Transaction": {
+      "title": "Transaction",
+      "description": "Income, expense or transfer transaction record",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "type": { "type": "string", "enum": ["expense", "income", "transfer"] },
+        "amount": { "type": "number" },
+        "title": { "type": "string" },
+        "categoryId": { "type": "string" },
+        "accountId": { "type": "string" },
+        "toAccountId": { "type": "string" },
+        "date": { "type": "string" },
+        "time": { "type": "string" },
+        "note": { "type": "string" },
+        "memberId": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "userId", "type", "amount", "title", "categoryId", "accountId", "date"]
+    },
+    "Budget": {
+      "title": "Budget",
+      "description": "Monthly spending budget per category",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "categoryId": { "type": "string" },
+        "limit": { "type": "number" },
+        "spent": { "type": "number" },
+        "month": { "type": "string" }
+      },
+      "required": ["id", "userId", "categoryId", "limit", "month"]
+    },
+    "Goal": {
+      "title": "Goal",
+      "description": "Savings and financial target goal",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "name": { "type": "string" },
+        "targetAmount": { "type": "number" },
+        "currentAmount": { "type": "number" },
+        "deadline": { "type": "string" },
+        "icon": { "type": "string" },
+        "color": { "type": "string" }
+      },
+      "required": ["id", "userId", "name", "targetAmount", "currentAmount"]
+    },
+    "BankAccount": {
+      "title": "BankAccount",
+      "description": "Linked bank account or wallet",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "bankName": { "type": "string" },
+        "bankCode": { "type": "string" },
+        "accountNumber": { "type": "string" },
+        "accountHolder": { "type": "string" },
+        "balance": { "type": "number" },
+        "type": { "type": "string", "enum": ["bank", "wallet", "card", "cash"] },
+        "isLinked": { "type": "boolean" },
+        "logo": { "type": "string" }
+      },
+      "required": ["id", "userId", "bankName", "bankCode", "accountNumber", "accountHolder", "balance"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "User profile information"
+    },
+    "/users/{userId}/transactions/{transactionId}": {
+      "schema": "Transaction",
+      "description": "User income, expense and transfer records"
+    },
+    "/users/{userId}/budgets/{budgetId}": {
+      "schema": "Budget",
+      "description": "User category budgets"
+    },
+    "/users/{userId}/goals/{goalId}": {
+      "schema": "Goal",
+      "description": "User savings goals"
+    },
+    "/users/{userId}/banks/{bankId}": {
+      "schema": "BankAccount",
+      "description": "User linked bank and wallet accounts"
+    }
+  }
+}

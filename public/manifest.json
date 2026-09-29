@@ -1,0 +1,23 @@
+{
+  "name": "CHI TIÊU VIỆT - Quản lý chi tiêu thông minh",
+  "short_name": "Chi Tiêu Việt",
+  "description": "Quản lý chi tiêu thông minh với nhập nhanh bằng giọng nói AI và báo cáo phân tích tài chính chuyên sâu.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#064E3B",
+  "theme_color": "#059669",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/svg+xml"
+    }
+  ]
+}

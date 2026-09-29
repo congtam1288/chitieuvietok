@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#047857" />
+      <stop offset="45%" stop-color="#059669" />
+      <stop offset="100%" stop-color="#064E3B" />
+    </linearGradient>
+
+    <!-- Top Gloss Highlight -->
+    <linearGradient id="glossGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.35" />
+      <stop offset="40%" stop-color="#ffffff" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- Gold Gradient for Coin & Accents -->
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF3B0" />
+      <stop offset="25%" stop-color="#FCD34D" />
+      <stop offset="60%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#D97706" />
+    </linearGradient>
+
+    <!-- Inner Coin Depth Gradient -->
+    <radialGradient id="coinFaceGrad" cx="38%" cy="32%" r="68%">
+      <stop offset="0%" stop-color="#FEF08A" />
+      <stop offset="45%" stop-color="#FBBF24" />
+      <stop offset="85%" stop-color="#D97706" />
+      <stop offset="100%" stop-color="#B45309" />
+    </radialGradient>
+
+    <!-- Coin Rim Gradient -->
+    <linearGradient id="coinRimGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFBEB" />
+      <stop offset="50%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#78350F" />
+    </linearGradient>
+
+    <!-- Shadow filter for safe inner 3D depth -->
+    <filter id="softShadow" x="-10%" y="-10%" width="125%" height="130%">
+      <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#022c22" flood-opacity="0.45" />
+    </filter>
+
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Base Squircle Container (Fits standard app icon grid, never clipped) -->
+  <rect x="16" y="16" width="480" height="480" rx="112" ry="112" fill="url(#bgGrad)" />
+
+  <!-- Subtle Inner Border Frame (Safe edge margin) -->
+  <rect x="20" y="20" width="472" height="472" rx="108" ry="108" fill="none" stroke="#6EE7B7" stroke-width="4" stroke-opacity="0.35" />
+
+  <!-- Upper Soft Gloss Shape -->
+  <path d="M 20 128 C 20 68, 68 20, 128 20 L 384 20 C 444 20, 492 68, 492 128 C 340 160, 170 160, 20 128 Z" fill="url(#glossGrad)" />
+
+  <!-- Inner Content Group (Guaranteed 20% safe-padding margin to prevent any overflow or clipping) -->
+  <g transform="translate(256, 256)" filter="url(#softShadow)">
+    
+    <!-- Outer Glow Behind Coin -->
+    <circle cx="0" cy="0" r="145" fill="#FDE68A" opacity="0.18" filter="url(#glow)" />
+
+    <!-- Piggy / Shield Financial Accent Behind Coin (Safe inner geometry) -->
+    <path d="M -130 18 C -130 -60, -60 -120, 0 -120 C 60 -120, 130 -60, 130 18 C 130 95, 60 142, 0 148 C -60 142, -130 95, -130 18 Z" 
+          fill="#065F46" opacity="0.65" stroke="#34D399" stroke-width="5" stroke-opacity="0.4" />
+
+    <!-- Main Gold Coin Body -->
+    <circle cx="0" cy="4" r="118" fill="url(#coinRimGrad)" />
+    <circle cx="0" cy="4" r="106" fill="url(#coinFaceGrad)" />
+
+    <!-- Coin Beveled Inner Rim -->
+    <circle cx="0" cy="4" r="98" fill="none" stroke="#FFF7ED" stroke-width="3" stroke-dasharray="7 5" opacity="0.65" />
+    <circle cx="0" cy="4" r="90" fill="none" stroke="#78350F" stroke-width="2.5" opacity="0.4" />
+
+    <!-- Vietnam Yellow Star Emblem (Upper Center of Coin) -->
+    <polygon points="0,-48 10,-24 35,-24 15,-10 23,15 0,1 -23,15 -15,-10 -35,-24 -10,-24"
+             fill="#FFFBEB" opacity="0.95" filter="url(#glow)" />
+
+    <!-- Vietnamese Dong Currency Symbol "₫" in bold centered typography -->
+    <g transform="translate(0, 32)">
+      <!-- Main "d" character stem and bowl -->
+      <text x="0" y="24" 
+            text-anchor="middle" 
+            font-family="system-ui, -apple-system, Montserrat, Roboto, sans-serif" 
+            font-size="68" 
+            font-weight="900" 
+            letter-spacing="-1"
+            fill="#78350F" 
+            opacity="0.92">₫</text>
+      <!-- Highlight layer for 3D metallic feel -->
+      <text x="-1" y="23" 
+            text-anchor="middle" 
+            font-family="system-ui, -apple-system, Montserrat, Roboto, sans-serif" 
+            font-size="68" 
+            font-weight="900" 
+            letter-spacing="-1"
+            fill="#FFFBEB">₫</text>
+    </g>
+
+    <!-- Sparkles within safe zone -->
+    <!-- Top-Right Sparkle -->
+    <path d="M 112 -80 Q 112 -65 127 -65 Q 112 -65 112 -50 Q 112 -65 97 -65 Q 112 -65 112 -80 Z" 
+          fill="#FEF3C7" opacity="0.95" />
+    <!-- Bottom-Left Sparkle -->
+    <path d="M -110 85 Q -110 96 -99 96 Q -110 96 -110 107 Q -110 96 -121 96 Q -110 96 -110 85 Z" 
+          fill="#FDE68A" opacity="0.85" />
+  </g>
+</svg>

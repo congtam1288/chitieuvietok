@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="100%" height="100%">
+  <defs>
+    <linearGradient id="favBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#059669" />
+      <stop offset="100%" stop-color="#064E3B" />
+    </linearGradient>
+    <radialGradient id="favCoin" cx="35%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#FEF08A" />
+      <stop offset="60%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#D97706" />
+    </radialGradient>
+  </defs>
+  <!-- Background with balanced padding -->
+  <rect x="2" y="2" width="60" height="60" rx="15" fill="url(#favBg)" stroke="#34D399" stroke-width="1.5" stroke-opacity="0.4" />
+  
+  <!-- Centered Gold Coin -->
+  <circle cx="32" cy="32" r="19" fill="#B45309" />
+  <circle cx="32" cy="31" r="17" fill="url(#favCoin)" stroke="#FFFBEB" stroke-width="1.2" />
+
+  <!-- Star -->
+  <polygon points="32,19 34,24 39,24 35,27 37,32 32,29 27,32 29,27 25,24 30,24" fill="#FEF3C7" />
+
+  <!-- Dong '₫' symbol -->
+  <text x="32" y="44" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="900" fill="#78350F">₫</text>
+  <text x="32" y="43" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="900" fill="#FFFBEB">₫</text>
+</svg>
